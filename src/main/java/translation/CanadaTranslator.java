@@ -22,8 +22,10 @@ public class CanadaTranslator implements Translator {
      */
     @Override
     public List<String> getLanguageCodes() {
-        return new ArrayList<>(List.of("de", "en", "zh"));
+        return new ArrayList<>(List.of("de", "en", "zh", "es", "zh-tw"));
     }
+
+
 
     /**
      * Return the country codes for all countries whose translations are
@@ -33,7 +35,7 @@ public class CanadaTranslator implements Translator {
      */
     @Override
     public List<String> getCountryCodes() {
-        return new ArrayList<>(List.of(CANADA));
+        return new ArrayList<>(List.of("Kanada", "Canada", "加拿大", "Canadá","加拿大"));
     }
 
     /**
@@ -48,7 +50,7 @@ public class CanadaTranslator implements Translator {
         if (!countryCode.equals(CANADA)) {
             return null;
         }
-        if (languageCode.equals("de")) {
+        else if (languageCode.equals("de")) {
             return "Kanada";
         }
         else if (languageCode.equals("en")) {
@@ -56,6 +58,12 @@ public class CanadaTranslator implements Translator {
         }
         else if ("zh".equals(languageCode)) {
             return "加拿大";
+        }
+        else if(languageCode.equals("zh-tw")) {
+            return "加拿大";
+        }
+        else if(languageCode.equals("es")) {
+            return "Canadá";
         }
         else {
             return null;
